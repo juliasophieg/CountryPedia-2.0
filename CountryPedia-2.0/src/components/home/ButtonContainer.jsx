@@ -6,6 +6,12 @@ const Buttons = styled.div`
   flex-direction: column;
   gap: 1rem;
   width: 100%;
+  @media (min-width: 700px) {
+    flex-direction: row;
+    max-width: 600px;
+    justify-content: space-between;
+    gap: 1.5m;
+  }
 `;
 
 function ButtonContainer({

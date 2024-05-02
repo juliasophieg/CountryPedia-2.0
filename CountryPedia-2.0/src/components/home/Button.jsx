@@ -7,6 +7,9 @@ const ButtonElement = styled.div`
   font-size: 18px;
   font-weight: 600;
   text-align: center;
+  @media (min-width: 700px) {
+    width: 120px;
+  }
   &:hover {
     background-color: ${(props) => props.buttonHoverColor};
     cursor: pointer;

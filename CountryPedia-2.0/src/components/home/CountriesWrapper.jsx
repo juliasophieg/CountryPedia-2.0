@@ -31,7 +31,7 @@ const IconDescription = styled.div`
   gap: 12px;
   padding: 1.5rem;
   border-radius: 8px;
-  background-color: var(--divs);
+  opacity: 0.5;
 `;
 
 const Country = styled.div`
@@ -45,10 +45,14 @@ const Country = styled.div`
     padding: 2rem;
     width: calc(100% - 4rem);
   }
+  &:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease-in-out;
+  }
 `;
 
 const CountryContent = styled.div`
-  display: flex;
+  display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
   flex-direction: column;
   justify-content: space-between;
   gap: 24px;
@@ -56,6 +60,14 @@ const CountryContent = styled.div`
     flex-direction: row;
     align-items: flex-start;
   }
+`;
+
+const TitleRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
 `;
 
 const Title = styled.h2`
@@ -66,6 +78,11 @@ const Title = styled.h2`
   }
 `;
 
+const ArrowIcon = styled.img`
+  transition: transform 0.5s ease;
+  transform: ${({ isOpen }) => (isOpen ? "rotate(180deg)" : "rotate(0)")};
+`;
+
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -74,6 +91,7 @@ const TextWrapper = styled.div`
     max-width: 50%;
   }
 `;
+
 const TextRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -99,6 +117,7 @@ const CountryImg = styled.img`
 
 function CountriesWrapper() {
   const [countries, setCountries] = useState([]);
+  const [selectedCountries, setSelectedCountries] = useState([]);
   const navigate = useNavigate();
 
   const handleAllCountries = () => {
@@ -107,19 +126,33 @@ function CountriesWrapper() {
         a.name.common.localeCompare(b.name.common)
       );
       setCountries(sortedCountries);
+      setSelectedCountries([]); // Reset selected countries
     });
   };
 
   const handleRandomCountry = () => {
     fetchAllCountriesData().then((data) => {
       const randomIndex = Math.floor(Math.random() * data.length);
-      const randomCountry = [data[randomIndex]];
-      setCountries(randomCountry);
+      const randomCountry = data[randomIndex];
+      setCountries([randomCountry]);
+      setSelectedCountries([randomCountry]); // Show country content directly
     });
   };
 
   const handleGame = () => {
     navigate("/game");
+  };
+
+  const toggleCountryContent = (country) => {
+    setSelectedCountries((prevSelectedCountries) => {
+      if (prevSelectedCountries.includes(country)) {
+        // Remove country if already selected
+        return prevSelectedCountries.filter((c) => c !== country);
+      } else {
+        // Add country if not selected
+        return [...prevSelectedCountries, country];
+      }
+    });
   };
 
   return (
@@ -151,8 +184,15 @@ function CountriesWrapper() {
           </IconDescription>
           {countries.map((country, index) => (
             <Country key={index}>
-              <Title>{country.name.common}</Title>
-              <CountryContent>
+              <TitleRow onClick={() => toggleCountryContent(country)}>
+                <Title>{country.name.common}</Title>
+                <ArrowIcon
+                  src="public/arrow.svg"
+                  alt="Arrow"
+                  isOpen={selectedCountries.includes(country)}
+                />
+              </TitleRow>
+              <CountryContent isOpen={selectedCountries.includes(country)}>
                 <TextWrapper>
                   <TextRow>
                     <img src="public/continent.svg" alt="Continent" />
@@ -160,7 +200,6 @@ function CountriesWrapper() {
                   </TextRow>
                   <TextRow>
                     <img src="public/capital.svg" alt="Capital" />
-                    {/* Check if country.languages exists, add comma if so */}
                     {country.capital && (
                       <Text>{Object.values(country.capital).join(", ")}</Text>
                     )}
@@ -171,7 +210,6 @@ function CountriesWrapper() {
                   </TextRow>
                   <TextRow>
                     <img src="public/language.svg" alt="Language" />
-                    {/* Check if country.languages exists, add comma if so */}
                     {country.languages && (
                       <Text>{Object.values(country.languages).join(", ")}</Text>
                     )}
