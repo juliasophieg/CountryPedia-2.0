@@ -1,9 +1,11 @@
+import HomeWrapper from "../components/home/HomeWrapper";
+import Header from "../components/common/Header";
 import styled from "@emotion/styled";
 
 function FlagGame() {
   return (
     <>
-      <h1>Let's play a game!</h1>
+      <Header />
     </>
   );
 }
