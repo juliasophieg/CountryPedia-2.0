@@ -13,6 +13,7 @@ const ButtonElement = styled.div`
   &:hover {
     background-color: ${(props) => props.buttonHoverColor};
     cursor: pointer;
+    text-decoration: underline;
     transition: all 0.3s linear;
   }
 `;

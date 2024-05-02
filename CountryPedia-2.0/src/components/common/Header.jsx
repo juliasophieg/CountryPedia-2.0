@@ -3,22 +3,18 @@ import styled from "@emotion/styled";
 const HeaderComponent = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 2rem;
 `;
 
 const Logo = styled.h1`
   font-size: 2.5rem;
   font-weight: 600;
   margin: 0;
-`;
-
-const Menu = styled.div`
-  width: 24px;
-  height: 20px;
-  border-radius: 2px;
-  background-color: var(--text-color);
+  @media (min-width: 700px) {
+    font-size: 4rem;
+  }
 `;
 
 function Header() {
@@ -26,7 +22,6 @@ function Header() {
     <>
       <HeaderComponent>
         <Logo>CountryPedia</Logo>
-        <Menu />
       </HeaderComponent>
     </>
   );
