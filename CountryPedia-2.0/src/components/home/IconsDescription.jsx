@@ -31,19 +31,19 @@ function IconsDescription() {
   return (
     <IconDescription>
       <IconTextRow>
-        <Icon src="public/continent.svg" />
+        <Icon src="/continent.svg" />
         <IconText>= Continent</IconText>
       </IconTextRow>
       <IconTextRow>
-        <Icon src="public/capital.svg" />
+        <Icon src="/capital.svg" />
         <IconText>= Capital</IconText>
       </IconTextRow>
       <IconTextRow>
-        <Icon src="public/population.svg" />
+        <Icon src="/population.svg" />
         <IconText>= Population</IconText>
       </IconTextRow>
       <IconTextRow>
-        <Icon src="public/language.svg" />
+        <Icon src="/language.svg" />
         <IconText>= Language(s)</IconText>
       </IconTextRow>
     </IconDescription>

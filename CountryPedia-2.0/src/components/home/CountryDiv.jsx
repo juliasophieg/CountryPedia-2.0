@@ -89,26 +89,26 @@ function CountryDiv({ country, isOpen, toggleCountryContent }) {
       <Country>
         <TitleRow onClick={() => toggleCountryContent(country)}>
           <Title>{country.name.common}</Title>
-          <ArrowIcon src="public/arrow.svg" alt="Arrow" isOpen={isOpen} />
+          <ArrowIcon src="/arrow.svg" alt="Arrow" isOpen={isOpen} />
         </TitleRow>
         <CountryContent isOpen={isOpen}>
           <TextWrapper>
             <TextRow>
-              <img src="public/continent.svg" alt="Continent" />
+              <img src="/continent.svg" alt="Continent" />
               <Text>{country.continents}</Text>
             </TextRow>
             <TextRow>
-              <img src="public/capital.svg" alt="Capital" />
+              <img src="/capital.svg" alt="Capital" />
               {country.capital && (
                 <Text>{Object.values(country.capital).join(", ")}</Text>
               )}
             </TextRow>
             <TextRow>
-              <img src="public/population.svg" alt="Population" />
+              <img src="/population.svg" alt="Population" />
               <Text>{country.population}</Text>
             </TextRow>
             <TextRow>
-              <img src="public/language.svg" alt="Language" />
+              <img src="/language.svg" alt="Language" />
               {country.languages && (
                 <Text>{Object.values(country.languages).join(", ")}</Text>
               )}
