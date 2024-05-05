@@ -35,7 +35,7 @@ function ButtonContainer({
           onClick={handleRandomCountry}
         />
         <Button
-          buttonTitle="Play a game"
+          buttonTitle="Games"
           buttonColor="var(--yellow)"
           buttonHoverColor="var(--hover-yellow)"
           onClick={handleGame}
