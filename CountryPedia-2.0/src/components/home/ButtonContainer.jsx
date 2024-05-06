@@ -4,7 +4,7 @@ import Button from "./Button";
 const Buttons = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
   @media (min-width: 700px) {
     flex-direction: row;

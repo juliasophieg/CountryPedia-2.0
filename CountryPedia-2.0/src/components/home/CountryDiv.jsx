@@ -5,13 +5,13 @@ import styled from "@emotion/styled";
 const Country = styled.div`
   display: flex;
   flex-direction: column;
-  width: calc(100% - 3rem);
+  width: 100%;
   padding: 1.5rem;
   border-radius: 12px;
   background-color: white;
   @media (min-width: 700px) {
     padding: 2rem;
-    width: calc(100% - 4rem);
+    width: 100%;
   }
   &:hover {
     transform: scale(1.02);
@@ -48,7 +48,7 @@ const Title = styled.h2`
 
 const ArrowIcon = styled.img`
   transition: transform 0.5s ease;
-  transform: ${({ isOpen }) => (isOpen ? "rotate(180deg)" : "rotate(0)")};
+  transform: ${({ isOpen }) => (isOpen ? "rotate(0)" : "rotate(180deg)")};
 `;
 
 const TextWrapper = styled.div`
