@@ -1,14 +1,13 @@
 import Header from "../components/common/Header";
-import GameWrapper from "../components/flagGame/GameWrapper";
 import styled from "@emotion/styled";
 
-function FlagGame() {
+function CapitalQuest() {
   return (
     <>
       <Header />
-      <GameWrapper />
+      <h2>Capital Quest</h2>
     </>
   );
 }
 
-export default FlagGame;
+export default CapitalQuest;
