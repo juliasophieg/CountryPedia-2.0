@@ -6,19 +6,26 @@ const QuestionContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding: 0 2rem;
+  @media (max-width: 500px) {
+  }
 `;
 
 const Flag = styled.img`
-  width: auto;
-  height: 260px;
+  width: 437px;
+  height: auto;
   border-radius: 8px;
+  opacity: 0.9;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 function Question({ flag }) {
   return (
     <>
       <QuestionContainer>
-        <h2>Which country does this flag belong to?</h2>;
+        <h2>Which country is this?</h2>;
         <Flag src={flag} alt="" />
       </QuestionContainer>
     </>

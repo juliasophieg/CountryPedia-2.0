@@ -7,20 +7,28 @@ const OptionsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  width: 1000px;
-  @media (max-width: 1000px) {
-    width: 700px;
+  width: 100vw;
+  max-width: 1000px;
+  @media (max-width: 500px) {
+    padding: 0 2rem;
   }
 `;
 
 const Option = styled.button`
-  max-width: 400px;
-  width: 100%;
+  width: 33%;
+  min-width: 212px;
+  max-width: 350px;
   background-color: white;
-  transition: all 0.3s;
-  @media (max-width: 1000px) {
-    width: 250px;
-    transition: all 0.3s;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: #737dd6;
+    color: white;
+    font-weight: 700;
+  }
+  @media (max-width: 500px) {
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
   }
 `;
 

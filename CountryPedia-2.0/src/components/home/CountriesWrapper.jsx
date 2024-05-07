@@ -30,6 +30,7 @@ function CountriesWrapper() {
   const [selectedCountries, setSelectedCountries] = useState([]);
   const [iconDescription, setIconDescription] = useState(false);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   // Fetch all countries on initial render
   useEffect(() => {
@@ -37,11 +38,13 @@ function CountriesWrapper() {
   }, []);
 
   const handleAllCountries = () => {
+    setLoading(true);
     fetchAllCountriesData().then((data) => {
       //Sorting the countries alphabetically
       const sortedCountries = data.sort((a, b) =>
         a.name.common.localeCompare(b.name.common)
       );
+      setLoading(false);
       setCountries(sortedCountries);
       setSelectedCountries([]); // Reset selected countries
       setIconDescription(true);
@@ -92,6 +95,9 @@ function CountriesWrapper() {
               toggleCountryContent={toggleCountryContent}
             />
           ))}
+          <button type="submit">
+            {loading ? <>Loading..</> : <>All countries loaded</>}
+          </button>
         </DisplayCountries>
       </ContentContainer>
     </>
