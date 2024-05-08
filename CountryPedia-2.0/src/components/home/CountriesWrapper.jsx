@@ -62,7 +62,7 @@ function CountriesWrapper() {
   };
 
   const handleGame = () => {
-    navigate("/game");
+    navigate("/games");
   };
 
   const toggleCountryContent = (country) => {

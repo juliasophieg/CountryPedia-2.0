@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { fetchAllCountriesData } from "../../utils/api";
+import { fetchAllCountriesData } from "../../../utils/api";
 import styled from "@emotion/styled";
 import Question from "./Question";
 import AnswerOptions from "./AnswerOptions";
-import Result from "./Result";
 
 const QuizContainer = styled.div`
   display: flex;
@@ -50,18 +49,33 @@ function FlagQuizWrapper() {
         setWrongAnswers(wrongAnswers);
       }
 
-      const answers = [randomCountry, ...wrongAnswers]; // Combine correct and wrong answers
+      const answers = [
+        { name: randomCountry.name.common, isCorrect: true, isClicked: false },
+        ...wrongAnswers.map((country) => ({
+          name: country.name.common,
+          isCorrect: false,
+          isClicked: false,
+        })),
+      ]; // Combine correct and wrong answers
       setAnswers(shuffleArray(answers)); // Shuffle the combined array
     });
   };
 
   const handleAnswerClick = (answer) => {
-    if (answer === correctCountry) {
-      alert("Correct!");
-      generateAnswers();
-    } else {
-      alert("Wrong!");
+    if (answer.isCorrect) {
+      // If the clicked answer is correct
+      setTimeout(() => {
+        // After 0.5 seconds
+        generateAnswers(); // Generate new question
+      }, 500);
     }
+
+    const updatedAnswers = answers.map((ans) =>
+      ans.name === answer.name
+        ? { ...ans, isClicked: true }
+        : { ...ans, isClicked: false }
+    );
+    setAnswers(updatedAnswers);
   };
 
   useEffect(() => {

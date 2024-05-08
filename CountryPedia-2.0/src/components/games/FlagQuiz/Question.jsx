@@ -14,6 +14,7 @@ const QuestionContainer = styled.div`
 const Flag = styled.img`
   width: 437px;
   height: auto;
+  max-height: 290px;
   border-radius: 8px;
   opacity: 0.9;
   @media (max-width: 500px) {

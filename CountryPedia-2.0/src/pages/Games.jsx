@@ -1,14 +1,14 @@
 import Header from "../components/common/Header";
-import GameWrapper from "../components/flagGame/GameWrapper";
+import GamesWrapper from "../components/games/GamesWrapper";
 import styled from "@emotion/styled";
 
-function FlagGame() {
+function Games() {
   return (
     <>
       <Header />
-      <GameWrapper />
+      <GamesWrapper />
     </>
   );
 }
 
-export default FlagGame;
+export default Games;
