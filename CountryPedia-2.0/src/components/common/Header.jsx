@@ -10,14 +10,14 @@ const HeaderComponent = styled.div`
 `;
 
 const Logo = styled.h1`
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 600;
   margin: 0;
   &:hover {
     cursor: pointer;
   }
-  @media (min-width: 700px) {
-    font-size: 4rem;
+  @media (max-width: 700px) {
+    font-size: 2rem;
   }
 `;
 

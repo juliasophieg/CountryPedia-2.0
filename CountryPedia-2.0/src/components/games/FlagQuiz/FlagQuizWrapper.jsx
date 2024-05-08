@@ -11,7 +11,6 @@ const QuizContainer = styled.div`
   align-items: center;
   width: 100vw;
   gap: 2rem;
-  padding-top: 5rem;
 `;
 
 function FlagQuizWrapper() {
