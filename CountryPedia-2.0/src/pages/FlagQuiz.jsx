@@ -6,7 +6,6 @@ import styled from "@emotion/styled";
 function FlagQuiz() {
   return (
     <>
-      <Header />
       <FlagQuizWrapper />
     </>
   );
