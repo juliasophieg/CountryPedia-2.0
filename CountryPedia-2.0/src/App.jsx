@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import FlagGame from "./pages/FlagGame";
+import Games from "./pages/Games";
 import FlagQuiz from "./pages/FlagQuiz";
 import CapitalQuest from "./pages/CapitalQuest";
 
@@ -10,9 +10,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/game" element={<FlagGame />} />
-        <Route path="/game/flag-quiz" element={<FlagQuiz />} />
-        <Route path="/game/capital-quest" element={<CapitalQuest />} />
+        <Route path="/games" element={<Games />} />
+        <Route path="/games/flag-quiz" element={<FlagQuiz />} />
+        <Route path="/games/capital-quest" element={<CapitalQuest />} />
       </Routes>
     </BrowserRouter>
   );
