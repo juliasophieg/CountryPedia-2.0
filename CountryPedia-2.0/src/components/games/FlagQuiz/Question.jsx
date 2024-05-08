@@ -12,12 +12,13 @@ const QuestionContainer = styled.div`
 `;
 
 const Flag = styled.img`
-  width: 437px;
-  height: auto;
-  max-height: 290px;
+  height: 290px;
+  max-width: 437px;
+  width: auto;
   border-radius: 8px;
   opacity: 0.9;
   @media (max-width: 500px) {
+    height: 220px;
     width: 100%;
   }
 `;

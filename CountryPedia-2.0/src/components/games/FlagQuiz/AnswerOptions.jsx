@@ -42,6 +42,7 @@ const Option = styled.button`
     min-width: unset;
     max-width: unset;
     width: 100%;
+    margin: 0;
   }
 `;
 
