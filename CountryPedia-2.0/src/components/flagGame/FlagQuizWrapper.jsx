@@ -58,6 +58,7 @@ function FlagQuizWrapper() {
   const handleAnswerClick = (answer) => {
     if (answer === correctCountry) {
       alert("Correct!");
+      generateAnswers();
     } else {
       alert("Wrong!");
     }
