@@ -77,6 +77,7 @@ const Text = styled.p`
 
 const CountryImg = styled.img`
   border-radius: 8px;
+  border: 1px solid #f7f7f7;
   max-width: 400px;
   @media (min-width: 700px) {
     max-width: 250px;
