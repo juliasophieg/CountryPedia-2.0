@@ -2,6 +2,12 @@
 
 
 # CountryPedia-2.0
-Remake of my first JavaScript project that was written in Vanilla js. This time I'm building it in React.
+React remake of my first JavaScript project that was written in Vanilla js. Now with some new features and updated styling ✨.
 
 The project is built using an API consisting of information about 250 countries. So fasten your seatbelts and get ready for a tour around the world!
+
+#### This is a work in progress, here's what's next:
+- Make Capital Quest game
+- Add counter for flag quiz (maybe add 3 strikes?)
+- Better loading
+- Add navigation on games page
