@@ -66,6 +66,10 @@ function FlagQuizWrapper() {
     if (answer.isCorrect) {
       // If the clicked answer is correct, increase the score
       setScore(score + 1); // Increment the score
+      // After 0.5 seconds, generate a new question
+    setTimeout(() => {
+      generateAnswers();
+    }, 500);
     }
 
     const updatedAnswers = answers.map((ans) =>
@@ -75,10 +79,7 @@ function FlagQuizWrapper() {
     );
     setAnswers(updatedAnswers);
 
-    // After 0.5 seconds, generate a new question
-    setTimeout(() => {
-      generateAnswers();
-    }, 500);
+    
   };
 
   useEffect(() => {
